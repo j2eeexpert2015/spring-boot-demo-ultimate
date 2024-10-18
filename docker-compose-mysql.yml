@@ -12,8 +12,9 @@ services:
       - "3306:3306"
 
 
-  springboot-app:
-    image: spring-boot-demo-app-mysql
+
+  springboot-app-mysql:
+    image: springboot-app-mysql-image
     container_name: springboot-app-mysql-container
     build:
       context: .

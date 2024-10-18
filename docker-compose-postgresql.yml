@@ -1,6 +1,7 @@
 services:
-  springboot-app:
-    image: spring-boot-demo-app-postgresql
+  springboot-app-postgres:
+    image: spring-boot-app-postgres-image
+    container_name: springboot-app-postgres-container
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,6 +12,8 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-db:5432/testdb
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
+    networks:
+      - postgres-demo
 
   postgres-db:
     image: postgres:latest
@@ -22,4 +25,11 @@ services:
       POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
+    networks:
+      - postgres-demo
+
+networks:
+  app-network:
+    name: postgres-demo  # Specify a custom name here
+    driver: bridge
 
