@@ -1,0 +1,10 @@
+services:
+  springboot-app:
+    image: spring-boot-demo-app-h2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=h2
