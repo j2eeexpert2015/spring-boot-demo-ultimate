@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class DataInitializer {
+public class JPADataInitializer {
 
     @Bean
     CommandLineRunner initData(DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
@@ -17,12 +17,10 @@ public class DataInitializer {
             // Create Employees and associate them with the Department
             Employee employee1 = new Employee();
             employee1.setName("Alice");
-            employee1.setPosition("Engineer");
             employee1.setDepartment(department);
 
             Employee employee2 = new Employee();
             employee2.setName("Bob");
-            employee2.setPosition("Technician");
             employee2.setDepartment(department);
 
             // Add employees to the department

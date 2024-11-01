@@ -13,9 +13,6 @@ public class Employee {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "position")
-    private String position;
-
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
@@ -26,14 +23,6 @@ public class Employee {
 
     public void setDepartment(Department department) {
         this.department = department;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
     }
 
     public String getName() {
@@ -51,7 +40,5 @@ public class Employee {
     public void setId(Long id) {
         this.id = id;
     }
-
-
 
 }
