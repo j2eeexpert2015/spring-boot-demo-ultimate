@@ -11,7 +11,7 @@ public class DemoController {
 
     @GetMapping("/")
     public String index() {
-        return "Greetings from Spring Boot! Its changed !!!!!!!!";
+        return "Greetings from Spring Boot!";
     }
 
     @PostMapping("/add")

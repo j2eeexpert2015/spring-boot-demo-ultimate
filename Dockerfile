@@ -10,5 +10,8 @@ COPY target/*.jar /app/application.jar
 # Step 4: Expose the port on which the Spring Boot application will run.
 EXPOSE 8080
 
+# Set the active Spring profile
+ENV SPRING_PROFILES_ACTIVE=h2
+
 # Step 5: Run the Spring Boot application.
 ENTRYPOINT ["java", "-jar", "/app/application.jar"]
