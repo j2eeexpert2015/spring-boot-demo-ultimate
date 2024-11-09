@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta19
+kind: Config
+build:
+  tagPolicy:
+    sha256: {}
+  artifacts:
+    - image: spring-boot-demo-ultimate
+      docker:
+        dockerfile: ./Dockerfile
+
+deploy:
+  kubectl:
+    manifests:
+      - ./k8/**.yaml
